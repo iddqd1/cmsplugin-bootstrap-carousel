@@ -8,10 +8,8 @@ $(document).ready(function(){
 $(window).load(function() {
     var carousel_items = $("#{{ instance.domid }}");
     var height = 0;
-    var sum = 0;
     carousel_items.each(function () {
         height = Math.max(height, $(this).height());
-        sum++;
     });
     carousel_items.height(height);
 });
