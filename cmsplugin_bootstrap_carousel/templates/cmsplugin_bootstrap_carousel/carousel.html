@@ -8,13 +8,16 @@ $(document).ready(function(){
 $(window).load(function() {
     var carousel_items = $("#{{ instance.domid }}");
     var height = 0;
+    var sum = 0;
     carousel_items.each(function () {
         height = Math.max(height, $(this).height());
+        sum++;
     });
     carousel_items.height(height);
 });
 </script>
 {% endaddtoblock %}
+
 <div id="{{ instance.domid }}" class="carousel slide">
   <div class="carousel-inner">{% for item in instance.carouselitem_set.all %}
     <div class="{% if forloop.first %}active {% endif %}item">
@@ -32,4 +35,9 @@ $(window).load(function() {
   <!-- Carousel nav -->
   <a class="carousel-control left" href="#{{ instance.domid }}" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#{{ instance.domid }}" data-slide="next">&rsaquo;</a>
+  <div class="carousel-dots-nav">
+    {% for item in instance.carouselitem_set.all %}
+      <a class="carousel-dot" href="#{{ instance.domid}}" data-slide="data-slide-to='0'">.</a>
+    {% endfor %}
+  </div>
 </div>
