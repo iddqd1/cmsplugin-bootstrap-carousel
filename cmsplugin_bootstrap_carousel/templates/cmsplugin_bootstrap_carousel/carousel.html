@@ -17,6 +17,12 @@ $(window).load(function() {
 {% endaddtoblock %}
 
 <div id="{{ instance.domid }}" class="carousel slide">
+  <ol class="carousel-indicators">
+    {% for item in instance.carouselitem_set.all %}
+      <li data-target="#{{ instance.domid}}" data-slide-to="{{ forloop.counter|add:"-1" }}"{% if forloop.first %} class="active"{% endif %}></li>
+    {% endfor %}
+  </ol>
+
   <div class="carousel-inner">{% for item in instance.carouselitem_set.all %}
     <div class="{% if forloop.first %}active {% endif %}item">
     {% if item.image %}
@@ -37,9 +43,4 @@ $(window).load(function() {
   <!-- Carousel nav -->
   <a class="carousel-control left" href="#{{ instance.domid }}" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#{{ instance.domid }}" data-slide="next">&rsaquo;</a>
-  <div class="carousel-dots-nav" style="text-align: center;">
-    {% for item in instance.carouselitem_set.all %}
-      <a class="carousel-dot" href="#{{ instance.domid}}" data-slide-to="{{ forloop.counter|add:"-1" }}">{{ forloop.counter }}</a>
-    {% endfor %}
-  </div>
 </div>
