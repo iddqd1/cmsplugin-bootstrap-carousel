@@ -3,7 +3,7 @@ import os
 
 setup(
     name = "cmsplugin-bootstrap-carousel",
-    packages = ['cmsplugin_bootstrap_carousel',],
+    packages = ['cmsplugin_bootstrap_carousel','cmsplugin_bootstrap_carousel.migrations'],
 
     package_data = {
         '': [
@@ -16,7 +16,7 @@ setup(
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     author = "Antoine Nguyen",
     author_email = "tonio@ngyn.org",
-    url = "http://bitbucket.org/tonioo/cmsplugin-bootstrap-carousel",
+    url = "http://bitbucket.org/iddqd1/cmsplugin-bootstrap-carousel",
     license = "BSD",
     keywords = ["django", "django-cms", "bootstrap", "carousel"],
     classifiers = [
