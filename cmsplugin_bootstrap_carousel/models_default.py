@@ -8,6 +8,7 @@ from django.utils.translation import ugettext as _
 from cms.models.pluginmodel import CMSPlugin
 from PIL import Image
 from cStringIO import StringIO
+from filebrowser.fields import FileBrowseField
 
 DEF_SIZE = (800, 600)
         
@@ -29,7 +30,7 @@ class CarouselItem(models.Model):
     caption_title = models.CharField(max_length=100, blank=True, null=True)
     caption_content = models.TextField(blank=True, null=True)
     link = models.CharField(max_length=200, blank=True, null=True)
-    image = models.ImageField(upload_to="uploads/", blank=True, null=True)
+    image = FileBrowseField("Picture", max_length=200, directory="uploads/", extensions=[".jpg", ".png"], blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.image:
