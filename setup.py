@@ -11,7 +11,7 @@ setup(
         ]
     },
 
-    version = "0.12",
+    version = "0.13",
     description = "Bootstrap carousel plugin for django-cms 2.2",
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     author = "Antoine Nguyen",
@@ -30,5 +30,6 @@ setup(
         ],
     include_package_data = True,
     zip_safe = True,
+    dependency_links = ['https://github.com/smacker/django-filebrowser-no-grappelli#egg=django-filebrowser'],
     install_requires = ['Django-CMS>=2.2'],
     )
