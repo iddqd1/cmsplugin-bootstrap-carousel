@@ -11,7 +11,7 @@ setup(
         ]
     },
 
-    version = "0.13",
+    version = "0.14",
     description = "Bootstrap carousel plugin for django-cms 2.2",
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     author = "Antoine Nguyen",
