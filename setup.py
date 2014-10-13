@@ -30,6 +30,6 @@ setup(
         ],
     include_package_data = True,
     zip_safe = True,
-    dependency_links = ['https://github.com/smacker/django-filebrowser-no-grappelli#egg=django-filebrowser']
+    dependency_links = ['https://github.com/smacker/django-filebrowser-no-grappelli#egg=django-filebrowser'],
     install_requires = ['Django-CMS>=2.2'],
     )
