@@ -26,4 +26,5 @@ class CarouselItem(models.Model):
     caption_content = models.TextField(blank=True, null=True)
     link = models.CharField(max_length=200, blank=True, null=True)
     image = FileBrowseField("Picture", max_length=200, directory="uploads/", extensions=[".jpg", ".png"], blank=True, null=True)
+    video = models.TextField(blank=True, null=True)
 

@@ -25,18 +25,22 @@ $(window).load(function() {
 
   <div class="carousel-inner">{% for item in instance.carouselitem_set.all %}
     <div class="{% if forloop.first %}active {% endif %}item">
-    {% if item.image %}
-      {% if item.link %}
-        <a href="{{ item.link }}"><img alt="" src="{{ item.image.url }}"></a>
-      {% else %}
-        <img alt="" src="{{ item.image.url }}">
-      {% endif %}
-      <div class="carousel-caption">
-    {% endif %}
-        <h4>{{ item.caption_title }}</h4>
-        <p>{{ item.caption_content }}</p>
-    {% if item.image %}
-      </div>
+    {% if item.video %}
+        {{ item.video|safe }}
+    {% else %}
+        {% if item.image %}
+          {% if item.link %}
+            <a href="{{ item.link }}"><img alt="" src="{{ item.image.url }}"></a>
+          {% else %}
+            <img alt="" src="{{ item.image.url }}">
+          {% endif %}
+          <div class="carousel-caption">
+        {% endif %}
+            <h4>{{ item.caption_title }}</h4>
+            <p>{{ item.caption_content }}</p>
+        {% if item.image %}
+          </div>
+        {% endif %}
     {% endif %}
     </div>{% endfor %}
   </div>
